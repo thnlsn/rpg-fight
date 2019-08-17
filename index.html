@@ -4,16 +4,58 @@
         <title>Unit 4 Game</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="./assets/css/styles.css"/>
-        <link rel="icon" href="./assets/images/favicon.ico">
+<!--         <link rel="icon" href="./assets/images/favicon.ico"> -->
         <link href="https://unpkg.com/@saeris/typeface-beleren-bold@latest/index.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 title">
                 <h1>Magic: The Gathering - RPG</h1>
             </div>
         </div>
         <div class="container-fluid">
+            <div class="row charSelect text-center">
+                <div class="col-lg-3 col-md-6 imgContainer" id="garruk">
+                    <img class="cardImage" src="./assets/images/garruk-card.png" alt="">
+                    <div class="HP" id="garruk-hp">140</div>
+                </div>
+                <div class="col-lg-3 col-md-6 imgContainer" id="sorin">
+                    <img class="cardImage" src="./assets/images/sorin-card.png" alt="">
+                    <div class="HP" id="sorin-hp">80</div>
+                </div>
+                <div class="col-lg-3 col-md-6 imgContainer" id="karn">
+                    <img class="cardImage" src="./assets/images/karn-card.png" alt="">
+                    <div class="HP" id="karn-hp">230</div>
+                </div>
+                <div class="col-lg-3 col-md-6 imgContainer" id="ajani">
+                    <img class="cardImage" src="./assets/images/ajani-card.png" alt="">
+                    <div class="HP" id="ajani-hp">160</div>
+                </div>
+            </div>
+
+            <div class="row gameRow">
+                <div class="col-lg-4 playerZone">
+                    <h2>Your Planeswalker</h2>
+                    <div id="col-lg-12 player-container">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 fightZone">
+                    <h2>Battle Zone</h2>
+                    <div id="col-lg-12 fighter-container">
+
+                    </div>
+                    <button type="button" class="btn btn-warning" id="attack-button">Attack</button>
+                </div>
+
+                <div class="col-lg-4 enemyZone">
+                    <h2>Enemies Available For Attack</h2>
+                    <div id="col-lg-12 enemy-container">
+
+                    </div>
+                </div>
+            </div>
 
         </div>
 

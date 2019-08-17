@@ -1,3 +1,77 @@
 body {
     font-family: "Beleren Bold";
+    background-image: url(../images/alara.jpg);
 }
+
+.title {
+    text-align: center;
+    padding-top: 1%;
+    margin-bottom: 1%;
+    background-color: rgba(0, 0, 0, 0.74);
+    border-radius: 0 0 1000px 1000px;
+    border-bottom: solid #bc90299f;
+    border-width: 1px;
+}
+
+h1 {
+    font-size: 60;
+    color: #dda930;
+    text-shadow: 2px 2px #bc8f29;
+}
+
+h2 {
+    font-size: 30;
+    color: #dda930;
+    text-shadow: 1px 1px #bc8f29;
+}
+
+.imgContainer {
+    position: relative;
+    text-align: center;
+    color: rgb(43, 42, 42);
+}
+
+.cardImage {
+    width: 190; 
+    height: 280;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.HP {
+    position: absolute;
+    top: 82.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+
+
+
+.gameRow {
+    opacity: 1;
+}
+
+.btn {
+    background-color: #dda728e1;
+    color: black;
+    margin-bottom: 2.5%;
+    width: 50%;
+    font-size: 2rem;
+}
+
+.playerZone {
+    text-align: center;
+    margin: 2% 0 0 0;
+}
+
+.fightZone {
+    text-align: center;
+    margin: 2% 0 0 0;
+}
+
+.enemyZone {
+    text-align: center;
+    margin: 2% 0 0 0;
+}
+
