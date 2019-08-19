@@ -18,35 +18,47 @@ var fighterChosen = false;
 var firstAttack = true;
 //set to false once the first attack has happened
 
+var enemy1Alive = true;
+var enemy2Alive = true;
+var enemy3Alive = true;
+
+//storage for detached elements
+var yourPlaneswalker;
+var yourFighter;
+
 
 //▓▓▓▓▓▓▓▓▓▓▓▓▓▓ PLANESWALKER STATS
 
 var garruk = {
     name: "garruk",
     hp: 140,
-    attackPower: 10,
-    counterPower: 32
+    baseAttackPower: 8,
+    attackPower: 8,
+    counterPower: 28
 }
 
 var sorin = {
     name: "sorin",
-    hp: 80,
-    attackPower: 12,
-    counterPower: 22
+    hp: 85,
+    baseAttackPower: 16,
+    attackPower: 16,
+    counterPower: 20
 }
 
 var karn = {
     name: "karn",
-    hp: 230,
+    hp: 270,
+    baseAttackPower: 2,
     attackPower: 2,
     counterPower: 8
 }
 
 var ajani = {
     name: "ajani",
-    hp: 160,
+    hp: 215,
+    baseAttackPower: 6,
     attackPower: 6,
-    counterPower: 16
+    counterPower: 12
 }
 
 
@@ -122,40 +134,72 @@ $("#ajani").click(function() {
 });
 
 
+
+//▓▓▓▓▓▓▓▓▓▓▓▓▓▓ MOVEMENT FUNCTIONS
+
+function initialMove() {
+    $("garruk").detach();
+    garruk.appendTo("player-container");
+    
+    //move chosen(ex. planeswalker) to player-container
+    //move others to enemy-container
+}
+
+/* function secondMove(enemyChosen) {
+    //move enemyChosen to fighter-container
+} */
+
+
+
+
 //▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ATTACK CLICK
 
 $("#attack-button").click(function() {
     if (charChosen === true && fighterChosen === true) {
-        combat(planeswalker, fighter);
-        update("#" + planeswalker.name + "-hp", planeswalker.hp);
-        update("#" + fighter.name + "-hp", fighter.hp);
+        if (fighter.hp >= 0 && planeswalker.hp >= 0) {
+            combat(planeswalker, fighter);
+            update("#" + planeswalker.name + "-hp", planeswalker.hp);
+            update("#" + fighter.name + "-hp", fighter.hp);
+        } else if (fighter.hp <= 0) {
+            //remove fighter from game and html
+            fighter;
+            fighterChosen = false;
+            if (enemy1Alive === true) {
+                enemy1Alive = false;
+                console.log("1:" + enemy1Alive + " 2:" +  enemy2Alive + " 3:" + enemy3Alive);
+            } else if (enemy2Alive === true) {
+                enemy2Alive = false;
+                console.log("1:" + enemy1Alive + " 2:" +  enemy2Alive + " 3:" + enemy3Alive);
+            } else {
+                enemy3Alive === false;
+                console.log("1:" + enemy1Alive + " 2:" +  enemy2Alive + " 3:" + enemy3Alive);
+                alert("Contratulations! The multiverse is saved!")
+            }
+        } else {
+            alert("Sorry, you've lost! Refresh to try again.")
+        }
     }
     console.log("clicked");
-
-
 });
 
 
 //▓▓▓▓▓▓▓▓▓▓▓▓▓▓ COMBAT CALCULATION FUNCTIONS
 
 function combat(player, computer) {
+    if (firstAttack === true) {
+    firstAttack = false;
     computer.hp = computer.hp - player.attackPower;
     console.log(computer.hp);
     player.hp = player.hp - computer.counterPower;
     console.log(player.hp);
+    } else {
+    player.attackPower = player.attackPower + player.baseAttackPower;
+    computer.hp = computer.hp - player.attackPower;
+    console.log(computer.hp);
+    player.hp = player.hp - computer.counterPower;
+    console.log(player.hp);
+    }
 }
-
-
-
-
-
-
-/* planeswalker.hp = planeswalker.hp - 1;
-fighter.hp = fighter.hp - 1;
-update(planeswalker.name + "-hp", planeswalker.hp);
-update(planeswalker.name + "-hp", fighter.hp);
-console.log(planeswalker.hp);
-console.log(fighter.hp); */
 
 
 
@@ -172,6 +216,8 @@ function update(id, value) {
     //  document.getElementById(id).innerHTML = value;
         $(id).html(value);
     };
+
+
 
 
 
