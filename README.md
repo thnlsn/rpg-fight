@@ -1,11 +1,11 @@
-#### Magic: The Gathering - RPG Game
+# Magic: The Gathering - RPG Game
 
-### Overview
+##S Overview
 
 The objective of this project was to create a simple rpg turn-based combat game utilizing the jQuery library.
 Click [here](https://thnlsn.github.io/rpg-fight/) to play the game
 
-### How to play
+## How to play
 
 1. Choose a character by clicking on the fighter's picture.
 
@@ -17,7 +17,7 @@ Click [here](https://thnlsn.github.io/rpg-fight/) to play the game
 
 5. Try to defeat all of the remaining fighters(enemies) before your `Health Points` become 0s.
 
-### Notes
+## Notes
 
 -   `Attack Power` of fighters differ as assigned randomly.
 
