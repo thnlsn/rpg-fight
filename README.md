@@ -1,4 +1,4 @@
-### Magic: The Gathering - RPG Game
+#### Magic: The Gathering - RPG Game
 
 ### Overview
 
