@@ -1,6 +1,6 @@
 # Magic: The Gathering - RPG Game
 
-##S Overview
+## Overview
 
 The objective of this project was to create a simple rpg turn-based combat game utilizing the jQuery library.
 Click [here](https://thnlsn.github.io/rpg-fight/) to play the game
